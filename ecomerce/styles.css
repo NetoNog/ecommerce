@@ -1,98 +1,124 @@
+/* Reset básico para garantir que os estilos sejam consistentes em todos os navegadores */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    box-sizing: border-box; /* Ajusta o modelo de caixa para incluir margens e padding no tamanho do elemento */
 }
 
 body {
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Define a fonte do site */
+    line-height: 1.6; /* Define o espaçamento entre as linhas do texto */
+    background-color: #1c1c1c; /* Cor de fundo escura para a página */
+    color: #e0e0e0; /* Cor de texto clara para contraste com o fundo escuro */
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
+    background: #121212; /* Cor de fundo escura para o cabeçalho */
+    color: #ffffff; /* Cor do texto no cabeçalho */
+    padding: 10px 0; /* Espaçamento interno no cabeçalho */
+    text-align: center; /* Alinha o texto do cabeçalho ao centro */
 }
 
-#cart {
-  margin-top: 10px;
+header nav ul {
+    list-style: none; /* Remove os marcadores de lista (bolinhas) */
 }
 
-.category {
-  margin: 20px;
+header nav ul li {
+    display: inline; /* Exibe os itens da lista lado a lado */
+    margin-right: 15px; /* Espaçamento entre os itens da lista */
 }
 
-.category h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+header nav ul li a {
+    color: #f1f1f1; /* Cor clara para os links */
+    text-decoration: none; /* Remove o sublinhado do link */
+    font-weight: bold; /* Deixa o link em negrito */
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 30px;
+header nav ul li a:hover {
+    color: #76c7c0; /* Cor para o link quando o cursor passar sobre ele */
 }
 
-.product {
-  background-color: #f4f4f4;
-  padding: 15px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+main {
+    padding: 10px 20px; /* Diminui o espaçamento principal */
 }
 
-.product img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.produtos {
+    display: grid; /* Organiza os produtos em uma grade */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 3 colunas flexíveis */
+    gap: 10px; /* Ajusta o espaçamento entre os itens para deixar mais próximos */
+    justify-items: center; /* Centraliza os produtos dentro de cada célula */
+}
+
+.produto {
+    background-color: #2a2a2a; /* Cor de fundo escura para o produto */
+    padding: 10px; /* Diminui o espaçamento interno do produto */
+    margin: 5px; /* Reduz a margem entre os produtos */
+    border-radius: 8px; /* Bordas arredondadas */
+    text-align: center; /* Alinha o conteúdo do produto ao centro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais suave para os produtos */
+    transition: transform 0.3s ease-in-out; /* Efeito de transição para interação */
+}
+
+.produto:hover {
+    transform: scale(1.05); /* Efeito de aumentar o produto ao passar o mouse */
+}
+
+.produto img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Bordas arredondadas nas imagens */
+}
+
+.produto h3 {
+    margin: 10px 0; /* Espaçamento acima e abaixo do título do produto */
+    color: #ffffff; /* Cor do título do produto */
+}
+
+.produto p {
+    color: #ffffff; /* Cor do preço do produto em um tom suave de verde */
+    font-size: 1.2rem; /* Aumenta um pouco o tamanho da fonte do preço */
 }
 
 button {
-  padding: 8px 12px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+    background-color: #7ac286; /* Cor de fundo verde suave para o botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    cursor: pointer; /* Muda o cursor para uma mãozinha quando passar sobre o botão */
+    border-radius: 5px; /* Bordas arredondadas no botão */
+    transition: background-color 0.3s ease; /* Efeito de transição suave para a cor de fundo */
 }
 
 button:hover {
-  background-color: #218838;
+    background-color: #0e7224; /* Cor do botão quando o cursor passa por cima */
 }
 
-#cart-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s;
+.carrinho {
+    margin-top: 40px; /* Espaçamento superior da seção de carrinho */
+    background-color: #2a2a2a; /* Cor de fundo escura para o carrinho */
+    padding: 15px; /* Diminui o espaçamento interno da seção de carrinho */
+    border-radius: 8px; /* Bordas arredondadas para o carrinho */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra suave para a seção do carrinho */
 }
 
-#cart-modal.hidden {
-  opacity: 0;
-  visibility: hidden;
+.carrinho h2 {
+    color: #ffffff; /* Cor do título da seção de carrinho */
 }
 
-#cart-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
+.carrinho ul {
+    list-style: none; /* Remove os marcadores de lista (bolinhas) */
+    padding: 0; /* Remove o padding da lista */
 }
 
-#cart-items {
-  list-style: none;
+.carrinho li {
+    margin-bottom: 8px; /* Diminui o espaçamento entre os itens do carrinho */
+    color: #e0e0e0; /* Cor do texto dos itens do carrinho */
 }
 
-#cart-items li {
-  margin-bottom: 10px;
+footer {
+    background-color: #121212; /* Cor de fundo escura para o rodapé */
+    color: #ffffff; /* Cor do texto no rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px; /* Espaçamento interno do rodapé */
+    margin-top: 40px; /* Espaçamento acima do rodapé */
 }
